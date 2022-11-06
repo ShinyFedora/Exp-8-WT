@@ -1,0 +1,28 @@
+<script src= "angular.min.js"></script> 
+<script src= "calculator.js"></script> 
+<div ng-app="CalculatorApp" ng-controller="CalculatorController"> 
+    <p><input type="number" ng-model="a"></p>
+    <p><input type="number" ng-model="b"></p>
+    <p><select ng-model="operator"> 
+        <option>+</option>
+        <option>*</option>
+        <option>-</option> 
+        <option>/</option>
+    </select></p>
+    <p>{{ result() }}</p> 
+</div> calculator.js angular.module('CalculatorApp', (l) 
+.controller('Calculator Controller', function($scope) { 
+    $scope.result = function() { 
+        if ($scope.operator == '+') { 
+            return $scope.a + $scope.b;
+        } 
+        if ($scope.operator == '-') { 
+            return $scope.a - $scope.b;
+        }
+        if ($scope.operator == '*') { 
+            return $scope.a * $scope.b;
+        } 
+        if ($scope.operator == '/') { 
+            return $scope.a / $scope.b; 
+        }
+    }); 
